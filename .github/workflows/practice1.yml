@@ -1,11 +1,11 @@
 name: Practice 1
+defaults:
+      run:
+        working-directory: /practice1
 on: push
 jobs: 
   lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./practice1
     steps:
     - name: Install Dependencies
       run: npm ci
@@ -14,9 +14,6 @@ jobs:
   test: 
     needs: lint
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./practice1
     steps:
     - name: Install Dependencies
       run: npm ci
@@ -25,9 +22,6 @@ jobs:
   deploy: 
     needs: [lint, test]
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./practice1
     steps:
     - name: Install Dependencies
       run: npm ci
@@ -35,9 +29,6 @@ jobs:
       run: npm deploy; echo "Deploying..."
   allActions:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./practice1
     steps:
     - name: Install Dependencies
       run: npm ci
