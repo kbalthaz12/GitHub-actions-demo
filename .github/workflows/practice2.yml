@@ -2,7 +2,7 @@ name: Practice 2
 on: issues
 jobs:
   outputDetails:
-    runs-on: ubuntu-lateest
+    runs-on: ubuntu-latest
     steps: 
       - name: Ouput Details
         run: echo ${{toJSON(github.event)}}
