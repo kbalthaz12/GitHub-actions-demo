@@ -11,7 +11,6 @@ jobs:
             with:
                 node-version: 18
           - name: Install Dependencies
-            run: 
-                # |
-                # cd example1
+            run: |
+                cd example1
                 npm ci
