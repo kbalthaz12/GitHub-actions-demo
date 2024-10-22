@@ -2,7 +2,7 @@ name: Practice 1
 defaults:
       run:
         working-directory: practice1
-on: push
+on: workflow_dispatch
 jobs: 
   lint:
     runs-on: ubuntu-latest

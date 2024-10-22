@@ -1,5 +1,5 @@
 name: Practice 2
-on: issues
+on: workflow_dispatch
 jobs:
   outputDetails:
     runs-on: ubuntu-latest
