@@ -43,7 +43,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-report
-          path: ${{env.WORKING_DIRECTORY}}$test.json
+          path: ${{env.WORKING_DIRECTORY}}test.json
   build:
     needs: test
     runs-on: ubuntu-latest
