@@ -1,9 +1,7 @@
 name: Deploy website
-env:
-  DIRECTORY_PATH: example2
 defaults: 
   run: 
-    working-directory: ${{ 'DIRECTORY_PATH' }}
+    working-directory: example2
 on:
   push:
     branches:
@@ -34,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with: 
           name: dist-files
-          path: '$DIRECTORY_PATH/dist'
+          path: example2/dist
       - name: Show Contents
         run: ls
   deploy:
@@ -47,7 +45,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist-files
-          path: '$DIRECTORY_PATH/dist'
+          path: example2/dist
       - name: Output Contents
         run: ls
       - name: Deploy
