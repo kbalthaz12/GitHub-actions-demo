@@ -33,6 +33,8 @@ jobs:
         with: 
           name: dist-files
           path: dist
+      - name: Show Contents
+        run: ls
   deploy:
     needs: build
     runs-on: ubuntu-latest
