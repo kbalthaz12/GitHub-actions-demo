@@ -38,8 +38,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Test code
+        id: test-code
         run: npm run test
       - name: Upload test report
+        if: failure() && steps.test-code.outcome == 'failure'
         uses: actions/upload-artifact@v3
         with:
           name: test-report
@@ -76,6 +78,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist-files
+          path: ${{env.WORKING_DIRECTORY}}dist
       - name: Output contents
         run: ls
       - name: Deploy
