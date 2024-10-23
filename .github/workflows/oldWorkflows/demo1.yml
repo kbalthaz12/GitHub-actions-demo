@@ -2,7 +2,9 @@ name: Events Demo 1
 defaults: 
   run: 
     working-directory: example2
-on: [push, workflow_dispatch]
+on:
+  pull_request:
+    types: opened
 jobs:
   deploy:
     runs-on: ubuntu-latest
